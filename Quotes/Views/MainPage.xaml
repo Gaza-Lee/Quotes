@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Quotes.Views.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             Title="MainPage">
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStopCollection>
+                    <GradientStop Color="LightGoldenrodYellow" Offset="0.0"/>
+                    <GradientStop Color="LightYellow" Offset="0.1"/>
+                    <GradientStop Color="LightCoral" Offset="0.4"/>
+                    <GradientStop Color="Pink" Offset="0.6"/>
+                    <GradientStop Color="LightPink" Offset="0.8"/>
+                    <GradientStop Color="Honeydew" Offset="1"/>
+                </GradientStopCollection>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button HorizontalOptions="End"
+                VerticalOptions="Start"
+                Margin="10"
+                Text="Create"
+                x:Name="btnToCreateQuotePage"
+                Clicked="btnToCreateQuotePage_Clicked"/>
+        <Border HorizontalOptions="Center"
+                VerticalOptions="Center"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 10"
+                Padding="10,5"
+                MinimumHeightRequest="400"
+                MinimumWidthRequest="380">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" 
+                     EndPoint="1,1">
+                    <GradientStopCollection>
+                        <GradientStop Color="DarkBlue" Offset="0.0" />
+                        <GradientStop Color="#9d00b4" Offset=".25"/>
+                        <GradientStop Color="#008793" Offset="0.50"/>
+                        <GradientStop Color="#00bf72" Offset="0.75"/>
+                        <GradientStop Color="LightBlue" Offset="1" />
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid RowDefinitions=".8*,.2*"
+                  Padding="10,5">
+                <VerticalStackLayout  HorizontalOptions="Center"
+                                      VerticalOptions="Center"
+                                      Grid.Row="0"
+                                      Spacing="30">
+                    <Label Text="You miss 100% of the shots you don't take"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontFamily="Baskervville"
+                           FontAttributes="Bold,Italic"
+                           FontSize="20"
+                           x:Name="lblQuoteMsg"/>
+                    <Label Text="~ Wayne Gretzky ~"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End"
+                           FontFamily="Baskervville"
+                           x:Name="lblAuthor"/>
+
+                </VerticalStackLayout>
+                <HorizontalStackLayout Grid.Row="1"
+                                       VerticalOptions="End"
+                                       HorizontalOptions="Center"
+                                       Spacing="5">
+                    <Button Text="Next Quote"
+                            BackgroundColor="#000"
+                            Opacity=".6"
+                            TextColor="#fff"
+                            x:Name="lblNextQuote"/>
+                    <Button Text="Change Background"
+                            TextColor="#fff"
+                            BackgroundColor="Black"
+                            Opacity=".6"
+                            x:Name="lblChangeBg"/>
+                    <Border StrokeShape="RoundRectangle 10"
+                            StrokeThickness="0"
+                            Background="#000">
+                        <Label Text="Download"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Padding="5"
+                               TextColor="#fff"
+                               x:Name="lblDownload">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="lblDownload_Tapped" NumberOfTapsRequired="1"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+                </HorizontalStackLayout>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>

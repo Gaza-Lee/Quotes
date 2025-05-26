@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Quotes.Views.CreateQuotePage"
+             NavigationPage.HasNavigationBar="False"
+             Title="CreateQuotePage">
+    <Grid RowDefinitions=".8*,.2*">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStopCollection>
+                    <GradientStop Color="LightGoldenrodYellow" Offset="0.0"/>
+                    <GradientStop Color="LightYellow" Offset="0.1"/>
+                    <GradientStop Color="LightCoral" Offset="0.4"/>
+                    <GradientStop Color="Pink" Offset="0.6"/>
+                    <GradientStop Color="LightPink" Offset="0.8"/>
+                    <GradientStop Color="Honeydew" Offset="1"/>
+                </GradientStopCollection>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border StrokeThickness="0"
+                StrokeShape="RoundRectangle 20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                MinimumHeightRequest="300"
+                MinimumWidthRequest="380"
+                Margin="10"
+                Grid.Row="0">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0"
+                                     EndPoint="1,0">
+                    <GradientStopCollection>
+                        <GradientStop Color="#DBCCAF" Offset="0.2" />
+                        <GradientStop Color="#57C785" Offset=".65" />
+                        <GradientStop Color="#EDDD53" Offset="1" />
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid >
+                <Editor Placeholder="Enter Quote"
+                        Margin="10,5"
+                        HorizontalTextAlignment="Center"
+                        VerticalOptions="Center"
+                        BackgroundColor="Transparent"
+                        AutoSize="TextChanges"
+                        FontFamily="Baskervville"
+                        FontAttributes="Bold,Italic"
+                        FontSize="20"
+                        PlaceholderColor="#000"/>
+                <Border VerticalOptions="End"
+                        StrokeShape="RoundRectangle 10"
+                        StrokeThickness="0"
+                        Margin="15,10"
+                        BackgroundColor="Grey"
+                        Opacity=".6">
+                    <Entry Placeholder="~ Who said this Quote ~"
+                           VerticalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           FontFamily="Baskervville"
+                           Margin="5,0"/>
+                </Border>
+            </Grid>
+        </Border>
+        <Button Text="Make"
+                Grid.Row="1"
+                VerticalOptions="End"
+                Margin="10,20"
+                CornerRadius="15"/>
+    </Grid>
+</ContentPage>
